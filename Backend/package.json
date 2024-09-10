@@ -1,0 +1,20 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "\"A social networking platform API",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "test": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "Aconnect1.0"
+  },
+  "author": "\"Joshua Olugtun, Bruno Guy and Gosplex John",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.20.0"
+  }
+}
+
