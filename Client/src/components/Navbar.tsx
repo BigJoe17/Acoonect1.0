@@ -37,7 +37,7 @@ const NavBar: React.FC<NavBarProps> = ({ isLoggedIn }) => {
     <a
       href={href}
       onClick={isMobile ? toggleMenu : undefined}
-      className={`text-gray-800 hover:bg-gray-800 hover:text-white ${
+      className={`text-gray-800  hover:bg-gray-500 last-of-type:hover:bg-gray-800 hover:text-white ${
         isMobile ? "block px-3 py-2 text-base" : "px-3 py-2 text-sm"
       } rounded-md font-medium flex ${className}`}
     >
@@ -56,7 +56,7 @@ const NavBar: React.FC<NavBarProps> = ({ isLoggedIn }) => {
       ]
     : [
         { href: "/", label: "Home", icon: Home },
-        { href: "/login", label: "Login", icon: LogIn },
+        { href: "/signup", label: "Register", icon: LogIn },
       ];
 
   return (
@@ -69,7 +69,7 @@ const NavBar: React.FC<NavBarProps> = ({ isLoggedIn }) => {
               key={item.href}
               href={item.href}
               className={
-                item.label === "Logout" || item.label === "Login"
+                item.label === "Logout" || item.label === "Register"
                   ? "bg-gray-800 text-white"
                   : ""
               }

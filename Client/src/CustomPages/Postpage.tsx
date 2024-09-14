@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React, { useState } from 'react';
 import { AiOutlineHome, AiOutlineBell, AiOutlinePlus } from 'react-icons/ai';
 import ChatRoom from './messages';
@@ -34,6 +35,11 @@ const PostPage = () => {
     }
   };
 
+=======
+import { PostsSection } from "@/components/extra/usefulSections";
+
+const Postpage = () => {
+>>>>>>> 3dd9ebbff30acfd9d5da59933569afe02f95e070
   return (
     <div
       className="relative flex size-full min-h-screen flex-col bg-[#f8fafb] group/design-root overflow-x-hidden"
@@ -93,10 +99,15 @@ const PostPage = () => {
               </div>
             </div>
           </div>
+<<<<<<< HEAD
 
           <div className="layout-content-container flex flex-col max-w-[960px]">
             {/* Render the content based on the selected tab */}
             {renderContent()}
+=======
+          <div className="layout-content-container flex flex-col max-w-[960px]">
+            <PostsSection />
+>>>>>>> 3dd9ebbff30acfd9d5da59933569afe02f95e070
           </div>
         </div>
       </div>
