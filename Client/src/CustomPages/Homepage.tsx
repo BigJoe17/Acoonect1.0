@@ -1,10 +1,8 @@
-import NavBar from "@/components/Navbar";
-import Heropage from "./Heropage";
+import Heropage from "../components/Sections/Heropage";
 
 const Homepage = () => {
   return (
     <>
-      <NavBar isLoggedIn={false} />
       <Heropage />
     </>
   );

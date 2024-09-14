@@ -1,9 +1,11 @@
 const Logo = () => {
   return (
-    <>
-      <h1 className="text-2xl font-bold text-gray-800">Logo</h1>
-      <p className="text-sm text-gray-500">Tagline</p>
-    </>
+    <div className="flex items-center gap-1">
+      <h1 className="text-2xl font-black font-montserrat text-blue-950">
+        Acoonect
+      </h1>
+      <img src="/connections.png" alt="Connections" className="w-10 h-10" />
+    </div>
   );
 };
 

@@ -11,6 +11,7 @@ import {
   Users,
   MessageSquare,
 } from "lucide-react";
+import Logo from "./extra/Logo";
 
 interface NavBarProps {
   isLoggedIn: boolean;
@@ -34,9 +35,9 @@ const NavBar: React.FC<NavBarProps> = ({ isLoggedIn }) => {
     <a
       href={href}
       onClick={isMobile ? toggleMenu : undefined}
-      className={`text-gray-300 hover:bg-gray-800 hover:text-white ${
+      className={`text-gray-800 hover:bg-gray-800 hover:text-white ${
         isMobile ? "block px-3 py-2 text-base" : "px-3 py-2 text-sm"
-      } rounded-md font-medium`}
+      } rounded-md font-medium flex`}
     >
       {children}
     </a>
@@ -58,9 +59,9 @@ const NavBar: React.FC<NavBarProps> = ({ isLoggedIn }) => {
       ];
 
   return (
-    <nav className="bg-gray-700">
+    <nav className="bg-background">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16">
-        <span className="text-white text-xl font-bold">UniConnect</span>
+        <Logo />
         <div className="hidden md:flex space-x-4">
           {menuItems.map(({ href, label, icon: Icon }) => (
             <NavItem key={href} href={href}>
@@ -70,7 +71,7 @@ const NavBar: React.FC<NavBarProps> = ({ isLoggedIn }) => {
         </div>
         <button
           onClick={toggleMenu}
-          className="md:hidden p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white"
+          className="md:hidden p-2 rounded-md text-gray-800 hover:text-white hover:bg-gray-700 focus:outline-none "
         >
           {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
         </button>
