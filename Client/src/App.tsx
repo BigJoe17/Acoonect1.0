@@ -6,6 +6,7 @@ import Signup from "./CustomPages/authpages/Signup";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Onboarding from "./CustomPages/authpages/Onboarding";
 import Login from "./CustomPages/authpages/Login";
+import Profile from "./CustomPages/Profiles";  
 
 const App = () => {
   return (
@@ -21,6 +22,9 @@ const App = () => {
         <Route path = "/signup" element={<Signup/>} />
         <Route path = "/login" element={<Login/>} />
         <Route path = "/onboarding" element={<Onboarding/>} />
+        <Route path = "/profile" element={<Profile/>} />
+
+
       </Routes>
     </BrowserRouter>
   );
