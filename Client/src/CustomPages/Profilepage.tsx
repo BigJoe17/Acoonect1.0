@@ -46,44 +46,7 @@ const ProfilePage: React.FC = () => {
 
   return (
     <div className="min-h-screen flex flex-col bg-[#f8fafb]">
-      {/* Top Dashboard Navigation Bar */}
-      <header className="bg-white shadow-lg p-4 flex justify-between items-center">
-        <div className="flex items-center space-x-4">
-          <h1 className="text-2xl font-semibold text-gray-900">Acoonect</h1>
-          <nav className="space-x-6 text-gray-600 flex items-center">
-            <a href="#" className="flex items-center space-x-2 text-gray-700 hover:text-blue-600">
-              <FaHome size={20} />
-              <span>Feed</span>
-            </a>
-            <a href="#" className="flex items-center space-x-2 text-gray-700 hover:text-blue-600">
-              <FaUsers size={20} />
-              <span>Servers</span>
-            </a>
-            <a href="#" className="flex items-center space-x-2 text-gray-700 hover:text-blue-600">
-              <FaBook size={20} />
-              <span>Resources</span>
-            </a>
-            <a href="#" className="flex items-center space-x-2 text-gray-700 hover:text-blue-600">
-              <FaEnvelope size={20} />
-              <span>Messages</span>
-            </a>
-            <a href="#" className="flex items-center space-x-2 text-gray-700 hover:text-blue-600">
-              <FaUser size={20} />
-              <span>Profile</span>
-            </a>
-          </nav>
-        </div>
-        <div className="flex items-center space-x-4">
-          <button
-            onClick={() => setIsOwner(false)}
-            className="px-4 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700 flex items-center space-x-2"
-          >
-            <FaSignOutAlt size={20} />
-            <span>Logout</span>
-          </button>
-        </div>
-      </header>
-
+      
       {/* Profile Section */}
       <main className="flex flex-col items-center p-6 bg-[#f8fafb]">
         <div className="bg-white rounded-lg shadow p-6 flex flex-col items-center">
