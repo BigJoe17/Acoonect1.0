@@ -3,6 +3,7 @@ import dotenv from 'dotenv';
 import connect from './db/connect.js';
 import authRoutes from './routes/authRoutes.js';
 import userRoutes from './routes/userRoutes.js';
+import matchRoutes from './routes/matchRoutes.js';
 import { auth } from 'express-openid-connect'; // Correctly import the auth function
 
 const app = express();
@@ -38,6 +39,7 @@ connect();
 // Define routes
 app.use('/api/auth', authRoutes);
 app.use('/api/users', userRoutes);
+app.use('/api/matches', matchRoutes);
 
 // Start server
 app.listen(port, () => {

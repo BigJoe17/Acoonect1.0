@@ -1,5 +1,4 @@
-// /controllers/matchController.js
-import User from '../models/userModel.js';
+import User from '../models/userModels.js';
 import { findMatches } from '../utils/matchAlgorithm.js';
 
 // Get matches for a specific user
