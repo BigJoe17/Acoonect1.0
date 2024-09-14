@@ -5,12 +5,12 @@ const FeatureSection = () => {
     <section className=" space-y-20">
       {featureHighlights.map((feature) => (
         <div key={feature.id} className="flex gap-6">
-          {feature.id % 2 !== 0 ? (
+          {feature.id % 2 === 0 ? (
             //Image on the left
             <>
               <div className="flex justify-center items-center w-1/2">
                 <div className="flex flex-col justify-center items-center">
-                  <h2 className="text-3xl font-montserrat font-bold text-foreground">
+                  <h2 className="text-4xl font-montserrat font-extrabold text-[#222222] text-foreground">
                     {feature.title}
                   </h2>
                   <p className="text-lg text-foreground mt-4">
@@ -39,7 +39,7 @@ const FeatureSection = () => {
               </div>
               <div className="flex justify-center items-center w-1/2">
                 <div className="flex flex-col justify-center items-center">
-                  <h2 className="text-3xl font-montserrat font-bold text-foreground">
+                  <h2 className="text-3xl text-[#222222] font-montserrat font-extrabold text-foreground">
                     {feature.title}
                   </h2>
                   <p className="text-lg font-inter text-foreground mt-4">
