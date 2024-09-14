@@ -10,6 +10,10 @@ export default {
   theme: {
     screens,
     fontSize,
+    fontFamily: {
+      inter: ["Inter", "sans-serif"],
+      montserrat: ["Montserrat", "sans-serif"],
+    },
     extend: {
       borderRadius: {
         lg: "var(--radius)",

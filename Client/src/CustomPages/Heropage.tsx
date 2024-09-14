@@ -1,33 +1,32 @@
 import { Link } from "react-router-dom";
+import { imagesArray } from "@/components/extra/usefulSections";
+import { Button } from "@/components/ui/button";
 
 const Heropage = () => {
   return (
     <div>
       <div className="bg-[#f1f1f1]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div className="flex flex-col justify-center">
-              <h1 className="text-4xl font-bold text-[var(--foreground)]">
-                The future of education is here
+              <h1 className="text-4xl font-inter font-bold text-[var(--foreground)]">
+                Connect, Collaborate, and Thrive in Your Academic Journey
               </h1>
               <p className="text-lg text-[#0e161b] mt-4">
-                Galileo is the all-in-one platform for students, educators, and
-                institutions.
+                Acoonect brings together the best of professional networking and
+                academic collaboration. Join study groups, share resources,
+                showcase your projects, and build lasting connections with peers
+                from your university and beyond
               </p>
-              <div className="mt-6">
-                <Link
-                  to="/login"
-                  className="bg-[#1e86ff] text-white px-6 py-3 rounded-md text-lg font-medium"
-                >
-                  Get started
-                </Link>
-              </div>
+              <Link to="/login" className="mt-4">
+                <Button variant="default">Get Started</Button>
+              </Link>
             </div>
             <div className="flex justify-center">
               <img
-                src="https://cdn.usegalileo.ai/sdxl10/1c8679ba-4e5a-49ee-93cc-25d52d936982.png"
+                src={imagesArray[0]}
                 alt="MIT"
-                className="w-full"
+                className="w-[80%] rounded-lg"
               />
             </div>
           </div>

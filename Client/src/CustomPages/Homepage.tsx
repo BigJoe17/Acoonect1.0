@@ -4,7 +4,7 @@ import Heropage from "./Heropage";
 const Homepage = () => {
   return (
     <>
-      <NavBar isLoggedIn={false} />
+      <NavBar isLoggedIn={true} />
       <Heropage />
     </>
   );
