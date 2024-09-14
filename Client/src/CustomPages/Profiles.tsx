@@ -1,6 +1,11 @@
 // components/Profile.tsx
-import React from 'react';
-import { FaBriefcase, FaHeart, FaRegEdit, FaUserGraduate } from  'react-icons/fa'; // Icons for fields
+import React from "react";
+import {
+  FaBriefcase,
+  FaHeart,
+  FaRegEdit,
+  FaUserGraduate,
+} from "react-icons/fa"; // Icons for fields
 
 const Profile: React.FC = () => {
   return (
@@ -19,15 +24,36 @@ const Profile: React.FC = () => {
             </button>
           </div>
           {/* Name and Bio */}
-          <h2 className="mt-4 text-3xl font-bold text-gray-800">Joshua Olugotun</h2>
-          <p className="mt-2 text-gray-600 max-w-md text-center">Aspiring developer interested in AI, Web3, and connecting students worldwide.</p>
+          <h2 className="mt-4 text-3xl font-bold text-gray-800">
+            Joshua Olugotun
+          </h2>
+          <p className="mt-2 text-gray-600 max-w-md text-center">
+            Aspiring developer interested in AI, Web3, and connecting students
+            worldwide.
+          </p>
 
           {/* Sections */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-8 w-full">
-            <ProfileSection icon={<FaUserGraduate />} title="Major" content="Computer Engineering" />
-            <ProfileSection icon={<FaBriefcase />} title="Semester" content="6th" />
-            <ProfileSection icon={<FaHeart />} title="Interests" content="AI, Web3, Blockchain" />
-            <ProfileSection icon={<FaUserGraduate />} title="Bio" content="Building solutions to connect people" />
+            <ProfileSection
+              icon={<FaUserGraduate />}
+              title="Major"
+              content="Computer Engineering"
+            />
+            <ProfileSection
+              icon={<FaBriefcase />}
+              title="Semester"
+              content="6th"
+            />
+            <ProfileSection
+              icon={<FaHeart />}
+              title="Interests"
+              content="AI, Web3, Blockchain"
+            />
+            <ProfileSection
+              icon={<FaUserGraduate />}
+              title="Bio"
+              content="Building solutions to connect people"
+            />
           </div>
         </div>
       </div>
@@ -41,7 +67,11 @@ interface ProfileSectionProps {
   content: string;
 }
 
-const ProfileSection: React.FC<ProfileSectionProps> = ({ icon, title, content }) => (
+const ProfileSection: React.FC<ProfileSectionProps> = ({
+  icon,
+  title,
+  content,
+}) => (
   <div className="flex items-center p-4 bg-gray-50 rounded-lg shadow hover:bg-gradient-to-r hover:from-purple-500 hover:to-indigo-600 hover:text-white transition-all duration-300">
     <div className="text-3xl mr-4">{icon}</div>
     <div>
