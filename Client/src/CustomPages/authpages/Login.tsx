@@ -68,8 +68,8 @@ const Login: React.FC = () => {
       ></div>
 
       {/* Right side form */}
-      <div className="w-full md:w-2/3 flex justify-center items-center bg-gray-100 relative">
-        <Link to="/" className="absolute top-5 left-10">
+      <div className="w-full md:w-2/3 flex flex-col gap-4 justify-center items-center bg-gray-100 relative">
+        <Link to="/" className="hover:opacity-80 transition">
           <Logo />
         </Link>
         <div className="bg-white p-10 rounded-lg shadow-md sm:w-[50%] w-[80%]">
@@ -113,7 +113,10 @@ const Login: React.FC = () => {
             <Separator className="my-4" />
             <FormDescription>
               Don't have an account?{" "}
-              <Link to="/signup" className="text-blue-600">
+              <Link
+                to="/signup"
+                className="text-blue-600 font-montserrat hover:underline"
+              >
                 Sign up
               </Link>{" "}
               now.

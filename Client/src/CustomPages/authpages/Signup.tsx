@@ -72,18 +72,15 @@ const Signup: React.FC = () => {
       ></div>
 
       {/* Right side form */}
-      <div className="w-2/3 flex justify-center items-center bg-gray-100 relative">
+      <div className="w-2/3 flex flex-col gap-4 justify-center items-center bg-gray-100 relative">
+        <Link to="/" className=" hover:opacity-80 transition">
+          <Logo />
+        </Link>
         <div className="bg-white p-4 rounded-lg shadow-md w-[50%] mx-auto">
           <h2 className="text-2xl font-bold font-montserrat mb-6 text-center">
             Signup
           </h2>
-          <Link
-            to="/"
-            className="absolute top-5 left-10 hover:opacity-80 transition
-        "
-          >
-            <Logo />
-          </Link>
+
           <Form {...form}>
             <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
               <FormField
@@ -134,8 +131,11 @@ const Signup: React.FC = () => {
             <Separator className="my-4" />
             <FormDescription>
               Already have an account?{" "}
-              <Link to="/login" className="text-blue-600">
-                Sign in
+              <Link
+                to="/login"
+                className="text-blue-600 font-montserrat hover:underline"
+              >
+                Log in
               </Link>{" "}
               now.
             </FormDescription>

@@ -1,3 +1,5 @@
+import { PostsSection } from "@/components/extra/usefulSections";
+
 const Postpage = () => {
   return (
     <div
@@ -102,7 +104,9 @@ const Postpage = () => {
               </div>
             </div>
           </div>
-          <div className="layout-content-container flex flex-col max-w-[960px]"></div>
+          <div className="layout-content-container flex flex-col max-w-[960px]">
+            <PostsSection />
+          </div>
         </div>
       </div>
     </div>
