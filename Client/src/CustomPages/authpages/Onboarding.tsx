@@ -8,7 +8,7 @@ import StepTwo from "./StepTwo";
 const Onboarding: React.FC = () => {
   const [step, setStep] = useState(1);
   const [formData, setFormData] = useState({
-    name: "",
+    university: "",
     major: "",
     interests: "",
     semester: "",
@@ -25,8 +25,8 @@ const Onboarding: React.FC = () => {
     };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-r from-purple-500 to-indigo-600">
-      <div className="w-full max-w-3xl p-8 bg-white rounded-lg shadow-lg">
+    <div className="min-h-screen flex items-center justify-center bg-gradient-to-b to-white from-[#f1f1f1]">
+      <div className="w-full max-w-3xl p-8 bg-white rounded-lg shadow-lg shadow-slate-800/50">
         {/* Custom Progress Bar */}
         <StepProgress step={step} />
 
@@ -46,7 +46,13 @@ const Onboarding: React.FC = () => {
             formData={formData}
           />
         )}
-        {step === 3 && <StepThree prevStep={prevStep} formData={formData} />}
+        {step === 3 && (
+          <StepThree
+            handleChange={handleChange}
+            prevStep={prevStep}
+            formData={formData}
+          />
+        )}
       </div>
     </div>
   );
