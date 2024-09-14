@@ -20,6 +20,7 @@ interface NavBarProps {
 interface NavItemProps {
   href: string;
   isMobile?: boolean;
+  className?: string;
   children: React.ReactNode;
 }
 
@@ -29,6 +30,7 @@ const NavBar: React.FC<NavBarProps> = ({ isLoggedIn }) => {
 
   const NavItem: React.FC<NavItemProps> = ({
     href,
+    className,
     children,
     isMobile = false,
   }) => (
@@ -37,7 +39,7 @@ const NavBar: React.FC<NavBarProps> = ({ isLoggedIn }) => {
       onClick={isMobile ? toggleMenu : undefined}
       className={`text-gray-800 hover:bg-gray-800 hover:text-white ${
         isMobile ? "block px-3 py-2 text-base" : "px-3 py-2 text-sm"
-      } rounded-md font-medium flex`}
+      } rounded-md font-medium flex ${className}`}
     >
       {children}
     </a>
@@ -55,17 +57,24 @@ const NavBar: React.FC<NavBarProps> = ({ isLoggedIn }) => {
     : [
         { href: "/", label: "Home", icon: Home },
         { href: "/login", label: "Login", icon: LogIn },
-        { href: "/register", label: "Register", icon: UserPlus },
       ];
 
   return (
     <nav className="bg-background">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16">
         <Logo />
-        <div className="hidden md:flex space-x-4">
-          {menuItems.map(({ href, label, icon: Icon }) => (
-            <NavItem key={href} href={href}>
-              <Icon className="inline-block mr-1" size={18} /> {label}
+        <div className="hidden md:flex space-x-4 last:!bg-gray-800">
+          {menuItems.map((item) => (
+            <NavItem
+              key={item.href}
+              href={item.href}
+              className={
+                item.label === "Logout" || item.label === "Login"
+                  ? "bg-gray-800 text-white"
+                  : ""
+              }
+            >
+              <item.icon className="inline-block mr-1" size={18} /> {item.label}
             </NavItem>
           ))}
         </div>

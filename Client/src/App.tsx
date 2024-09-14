@@ -3,6 +3,7 @@ import Postpage from "./CustomPages/Postpage";
 import NavBar from "./components/Navbar";
 import Thirdpage from "./CustomPages/ThirdPage";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Footer from "./components/Footer";
 
 const App = () => {
   return (
@@ -16,6 +17,7 @@ const App = () => {
         <Route path="/server" element={<Thirdpage />} />
         <Route path="/server" element={<Thirdpage />} />
       </Routes>
+      <Footer />
     </BrowserRouter>
   );
 };

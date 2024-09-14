@@ -65,4 +65,7 @@
   body {
     @apply bg-background text-foreground font-inter;
   }
+  section{
+    @apply max-w-[1024px] mx-auto mt-20;
+  }
 }
