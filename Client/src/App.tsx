@@ -1,5 +1,6 @@
 import Homepage from "./CustomPages/Homepage";
 import Postpage from "./CustomPages/Postpage";
+import ProfilePage from "./CustomPages/Profilepage";
 import NavBar from "./components/Navbar";
 import Thirdpage from "./CustomPages/ThirdPage";
 import Signup from "./CustomPages/authpages/Signup";
@@ -17,7 +18,7 @@ const App = () => {
         <Route path="/" element={<Homepage />} />
         <Route path="/post" element={<Postpage />} />
         <Route path="/user" element={<Thirdpage />} />
-        <Route path="/login" element={<Thirdpage />} />
+        <Route path="/profile" element={<ProfilePage />} />
         <Route path="/server" element={<Thirdpage />} />
         <Route path="/server" element={<Thirdpage />} />
         <Route path="/signup" element={<Signup />} />
