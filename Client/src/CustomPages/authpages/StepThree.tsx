@@ -1,5 +1,5 @@
 // components/StepThree.tsx
-import React from 'react';
+import React from "react";
 
 interface StepProps {
   prevStep: () => void;
@@ -15,12 +15,14 @@ const StepThree: React.FC<StepProps> = ({ prevStep, formData }) => {
 
   return (
     <form onSubmit={handleSubmit}>
-      <h2 className="text-2xl font-bold mb-4">Step 3: Additional Information</h2>
+      <h2 className="text-2xl font-bold mb-4">
+        Step 3: Additional Information
+      </h2>
       <div className="mb-4">
         <label className="block text-sm font-medium mb-1">Bio</label>
         <textarea
           value={formData.bio}
-          onChange={(e) => formData.bio = e.target.value}
+          onChange={(e) => (formData.bio = e.target.value)}
           className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500"
           placeholder="Tell us a bit about yourself"
           rows={5}
