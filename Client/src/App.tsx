@@ -1,16 +1,21 @@
-function App(){
+import Homepage from "./CustomPages/Homepage";
+import Postpage from "./CustomPages/Postpage";
+import Thirdpage from "./CustomPages/ThirdPage";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+
+const App = () => {
   return (
-    <>
-     <h1 className="text-3xl font-bold underline">
-      Hello world!
-    </h1>
-    <div>
-      <h1>Hello World👋</h1>
-    </div>
-    <div>
-      <p>Its a connecting with you</p>
-    </div>
-    </>
-  )
-}
-export default App
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Homepage />} />
+        <Route path="/post" element={<Postpage />} />
+        <Route path="/user" element={<Thirdpage />} />
+        <Route path="/login" element={<Thirdpage />} />
+        <Route path="/server" element={<Thirdpage />} />
+        <Route path="/server" element={<Thirdpage />} />
+      </Routes>
+    </BrowserRouter>
+  );
+};
+
+export default App;
