@@ -10,16 +10,18 @@ import Onboarding from "./CustomPages/authpages/Onboarding";
 import Login from "./CustomPages/authpages/Login";
 import Profile from "./CustomPages/Profiles";
 import ChatRoom from "./CustomPages/messages";
+import { useAuthContext } from "./context/authContext";
 
 const App = () => {
   const location = useLocation();
+  const { loggedIn } = useAuthContext();
 
   const needsNavbar =
     !location.pathname.includes("login") &&
     !location.pathname.includes("signup");
   return (
     <>
-      {needsNavbar && <NavBar isLoggedIn={false} />}
+      {needsNavbar && <NavBar isLoggedIn={loggedIn} />}
       <Routes>
         <Route path="/" element={<Homepage />} />
         <Route path="/post" element={<Postpage />} />
@@ -32,7 +34,7 @@ const App = () => {
         <Route path="/onboarding" element={<Onboarding />} />
         <Route path="/onboarding" element={<Onboarding />} />
         <Route path="/profile" element={<Profile />} />
-        <Route path="/messages" element={<ChatRoom/>} />
+        <Route path="/messages" element={<ChatRoom />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/login" element={<Login />} />
       </Routes>

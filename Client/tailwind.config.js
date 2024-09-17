@@ -19,6 +19,7 @@ export default {
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",
+        shape: "61% 39% 66% 34% / 68% 53% 47% 32% ",
       },
       colors: {
         background: "hsl(var(--background))",

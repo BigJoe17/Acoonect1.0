@@ -20,6 +20,7 @@ import {
 import { Input } from "@/components/ui/input";
 import { Separator } from "@/components/ui/separator";
 import { useToast } from "../../hooks/use-toast";
+import { useAuthContext } from "@/context/authContext";
 
 const formSchema = z.object({
   email: z.string().email({
@@ -35,6 +36,7 @@ const formSchema = z.object({
 
 const Signup: React.FC = () => {
   const { toast } = useToast();
+  const { setRegisterForm, setLoggedIn } = useAuthContext();
   const navigate = useNavigate();
   // 1. Define your form.
   const form = useForm<z.infer<typeof formSchema>>({
@@ -50,6 +52,13 @@ const Signup: React.FC = () => {
   function onSubmit(values: z.infer<typeof formSchema>) {
     // Do something with the form values.
     // ✅ This will be type-safe and validated.
+    setRegisterForm((prevForm: any) => ({
+      ...prevForm,
+      email: values.email,
+      name: values.name,
+      password: values.password,
+    }));
+    setLoggedIn(true);
     console.log(values);
     toast({
       title: "Signup successful",
