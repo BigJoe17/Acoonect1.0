@@ -69,4 +69,11 @@
   section{
     @apply max-w-[1024px] mx-auto mt-20;
   }
+  main{
+    @apply min-h-[calc(100vh-450px)] flex flex-col justify-center items-center;  
+  }
+  @font-face {
+    font-family: 'Geist-mono';
+    src: url('/public/fonts/GeistMonoVF.woff');
+  }
 }

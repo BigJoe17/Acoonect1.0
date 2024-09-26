@@ -13,6 +13,7 @@ export default {
     fontFamily: {
       inter: ["Inter", "sans-serif"],
       montserrat: ["Montserrat", "sans-serif"],
+      geist: ["Geist", "sans-serif"],
     },
     extend: {
       borderRadius: {

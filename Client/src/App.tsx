@@ -11,6 +11,7 @@ import Login from "./CustomPages/authpages/Login";
 import Profile from "./CustomPages/Profiles";
 import ChatRoom from "./CustomPages/messages";
 import { useAuthContext } from "./context/authContext";
+import NoPage from "./CustomPages/NoPage";
 
 const App = () => {
   const location = useLocation();
@@ -36,6 +37,7 @@ const App = () => {
         <Route path="/messages" element={<ChatRoom />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/login" element={<Login />} />
+        <Route path="*" element={<NoPage />} />
       </Routes>
       {needsNavbar && <Footer />}
     </>
