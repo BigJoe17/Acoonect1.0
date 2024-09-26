@@ -1,6 +1,6 @@
 // Login.tsx
 import Logo from "@/components/extra/Logo";
-import React, { useState } from "react";
+import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { FaGoogle, FaLinkedin, FaGithub } from "react-icons/fa";

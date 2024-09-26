@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { AiOutlineHome, AiOutlineBell, AiOutlinePlus } from "react-icons/ai";
-import ChatRoom from "./messages";
+// import ChatRoom from "./messages";
 import NotificationsSection from "@/components/NotificationSection";
 import { PostsSection } from "@/components/extra/usefulSections";
 
@@ -133,6 +133,7 @@ const CreateComponent = () => {
   return (
     <div>
       <button
+        aria-label="Create Post"
         onClick={() => setShowOptions(!showOptions)}
         className="bg-blue-500 text-white rounded-full p-3 shadow-md hover:bg-blue-600 transition"
       >
@@ -181,13 +182,23 @@ const CreateComponent = () => {
 
       {selectedOption === "Video" && (
         <div className="mt-4">
-          <input type="file" accept="video/*" onChange={handleFileChange} />
+          <input
+            placeholder="video"
+            type="file"
+            accept="video/*"
+            onChange={handleFileChange}
+          />
         </div>
       )}
 
       {selectedOption === "Picture" && (
         <div className="mt-4">
-          <input type="file" accept="image/*" onChange={handleFileChange} />
+          <input
+            placeholder="photo"
+            type="file"
+            accept="image/*"
+            onChange={handleFileChange}
+          />
         </div>
       )}
     </div>

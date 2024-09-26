@@ -5,7 +5,6 @@ import {
   User,
   LogOut,
   LogIn,
-  UserPlus,
   Home,
   Book,
   Users,

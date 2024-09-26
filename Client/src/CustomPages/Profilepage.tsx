@@ -1,23 +1,23 @@
-import React, { useState } from 'react';
-import { FaHome, FaUsers, FaBook, FaEnvelope, FaUser, FaSignOutAlt } from 'react-icons/fa';
+import React, { useState } from "react";
+// import { FaHome, FaUsers, FaBook, FaEnvelope, FaUser, FaSignOutAlt } from 'react-icons/fa';
 
 const ProfilePage: React.FC = () => {
-  const [activeTab, setActiveTab] = useState<string>('activity');
-  const [isOwner, setIsOwner] = useState<boolean>(true); // Assume logged in as owner for edit functionality
+  const [activeTab, setActiveTab] = useState<string>("activity");
+  // const [isOwner, setIsOwner] = useState<boolean>(true); // Assume logged in as owner for edit functionality
   const [activity, setActivity] = useState<string[]>([
-    'Attended Machine Learning Conference - Presented research on AI techniques',
-    'Published Research Paper - Focused on deep learning and neural networks',
+    "Attended Machine Learning Conference - Presented research on AI techniques",
+    "Published Research Paper - Focused on deep learning and neural networks",
   ]);
   const [about, setAbout] = useState<string>(
-    'Isabella is a PhD student in Computer Science at Stanford University. She is passionate about artificial intelligence and machine learning.'
+    "Isabella is a PhD student in Computer Science at Stanford University. She is passionate about artificial intelligence and machine learning."
   );
   const [projects, setProjects] = useState<string[]>([
-    'Project A - A web-based platform for real-time collaboration using React and Node.js.',
-    'Project B - A mobile application for personal finance management built with Flutter and Firebase.',
+    "Project A - A web-based platform for real-time collaboration using React and Node.js.",
+    "Project B - A mobile application for personal finance management built with Flutter and Firebase.",
   ]);
   const [social, setSocial] = useState<string[]>([
-    'GitHub - github.com/isabella',
-    'LinkedIn - linkedin.com/in/isabella',
+    "GitHub - github.com/isabella",
+    "LinkedIn - linkedin.com/in/isabella",
   ]);
 
   const handleTabChange = (tab: string) => {
@@ -25,37 +25,48 @@ const ProfilePage: React.FC = () => {
   };
 
   const handleAddActivity = () => {
-    const newActivity = prompt('Enter new activity:');
+    const newActivity = prompt("Enter new activity:");
     if (newActivity) setActivity([...activity, newActivity]);
   };
 
   const handleEditAbout = () => {
-    const newAbout = prompt('Edit About section:', about);
+    const newAbout = prompt("Edit About section:", about);
     if (newAbout) setAbout(newAbout);
   };
 
   const handleAddProject = () => {
-    const newProject = prompt('Enter new project:');
+    const newProject = prompt("Enter new project:");
     if (newProject) setProjects([...projects, newProject]);
   };
 
   const handleAddSocial = () => {
-    const newSocial = prompt('Enter new social link:');
+    const newSocial = prompt("Enter new social link:");
     if (newSocial) setSocial([...social, newSocial]);
   };
 
   return (
     <div className="min-h-screen flex flex-col bg-[#f8fafb]">
-      
       {/* Profile Section */}
       <main className="flex flex-col items-center p-6 bg-[#f8fafb]">
         <div className="bg-white rounded-lg shadow p-6 flex flex-col items-center">
-          <img className="w-24 h-24 rounded-full object-cover" src="https://via.placeholder.com/150" alt="Profile" />
-          <h2 className="mt-4 text-2xl font-semibold text-gray-900">Isabella Rodriguez</h2>
-          <p className="text-sm text-gray-500">PhD Student in Computer Science at Stanford University</p>
+          <img
+            className="w-24 h-24 rounded-full object-cover"
+            src="https://via.placeholder.com/150"
+            alt="Profile"
+          />
+          <h2 className="mt-4 text-2xl font-semibold text-gray-900">
+            Isabella Rodriguez
+          </h2>
+          <p className="text-sm text-gray-500">
+            PhD Student in Computer Science at Stanford University
+          </p>
           <div className="mt-4 flex space-x-4">
-            <button className="px-4 py-2 bg-gray-300 text-black rounded-lg hover:bg-gray-400">Connect</button>
-            <button className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700">Message</button>
+            <button className="px-4 py-2 bg-gray-300 text-black rounded-lg hover:bg-gray-400">
+              Connect
+            </button>
+            <button className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700">
+              Message
+            </button>
           </div>
           <p className="mt-2 text-gray-500">1,500 followers • 50 views today</p>
         </div>
@@ -64,26 +75,42 @@ const ProfilePage: React.FC = () => {
         <div className="mt-8 w-full max-w-3xl">
           <nav className="flex justify-center space-x-10 border-b border-gray-200">
             <button
-              onClick={() => handleTabChange('activity')}
-              className={`pb-2 ${activeTab === 'activity' ? 'border-b-2 border-blue-600 text-blue-600' : 'text-gray-600'}`}
+              onClick={() => handleTabChange("activity")}
+              className={`pb-2 ${
+                activeTab === "activity"
+                  ? "border-b-2 border-blue-600 text-blue-600"
+                  : "text-gray-600"
+              }`}
             >
               Activity
             </button>
             <button
-              onClick={() => handleTabChange('about')}
-              className={`pb-2 ${activeTab === 'about' ? 'border-b-2 border-blue-600 text-blue-600' : 'text-gray-600'}`}
+              onClick={() => handleTabChange("about")}
+              className={`pb-2 ${
+                activeTab === "about"
+                  ? "border-b-2 border-blue-600 text-blue-600"
+                  : "text-gray-600"
+              }`}
             >
               About
             </button>
             <button
-              onClick={() => handleTabChange('projects')}
-              className={`pb-2 ${activeTab === 'projects' ? 'border-b-2 border-blue-600 text-blue-600' : 'text-gray-600'}`}
+              onClick={() => handleTabChange("projects")}
+              className={`pb-2 ${
+                activeTab === "projects"
+                  ? "border-b-2 border-blue-600 text-blue-600"
+                  : "text-gray-600"
+              }`}
             >
               Projects
             </button>
             <button
-              onClick={() => handleTabChange('social')}
-              className={`pb-2 ${activeTab === 'social' ? 'border-b-2 border-blue-600 text-blue-600' : 'text-gray-600'}`}
+              onClick={() => handleTabChange("social")}
+              className={`pb-2 ${
+                activeTab === "social"
+                  ? "border-b-2 border-blue-600 text-blue-600"
+                  : "text-gray-600"
+              }`}
             >
               Social
             </button>
@@ -91,9 +118,11 @@ const ProfilePage: React.FC = () => {
 
           {/* Tab Content */}
           <div className="mt-6">
-            {activeTab === 'activity' && (
+            {activeTab === "activity" && (
               <div className="p-4 bg-white rounded-lg shadow">
-                <h2 className="text-xl font-semibold text-gray-900">Recent Activity</h2>
+                <h2 className="text-xl font-semibold text-gray-900">
+                  Recent Activity
+                </h2>
                 <ul className="mt-4 space-y-4">
                   {activity.map((item, index) => (
                     <li key={index} className="p-4 bg-gray-100 rounded-lg">
@@ -109,9 +138,11 @@ const ProfilePage: React.FC = () => {
                 </button>
               </div>
             )}
-            {activeTab === 'about' && (
+            {activeTab === "about" && (
               <div className="p-4 bg-white rounded-lg shadow">
-                <h2 className="text-xl font-semibold text-gray-900">About Isabella</h2>
+                <h2 className="text-xl font-semibold text-gray-900">
+                  About Isabella
+                </h2>
                 <p className="text-gray-600 text-sm mt-2">{about}</p>
                 <button
                   onClick={handleEditAbout}
@@ -121,9 +152,11 @@ const ProfilePage: React.FC = () => {
                 </button>
               </div>
             )}
-            {activeTab === 'projects' && (
+            {activeTab === "projects" && (
               <div className="p-4 bg-white rounded-lg shadow">
-                <h2 className="text-xl font-semibold text-gray-900">Projects</h2>
+                <h2 className="text-xl font-semibold text-gray-900">
+                  Projects
+                </h2>
                 <ul className="mt-4 space-y-4">
                   {projects.map((project, index) => (
                     <li key={index} className="p-4 bg-gray-100 rounded-lg">
@@ -139,9 +172,11 @@ const ProfilePage: React.FC = () => {
                 </button>
               </div>
             )}
-            {activeTab === 'social' && (
+            {activeTab === "social" && (
               <div className="p-4 bg-white rounded-lg shadow">
-                <h2 className="text-xl font-semibold text-gray-900">Social Links</h2>
+                <h2 className="text-xl font-semibold text-gray-900">
+                  Social Links
+                </h2>
                 <ul className="mt-4 space-y-4">
                   {social.map((link, index) => (
                     <li key={index} className="p-4 bg-gray-100 rounded-lg">
