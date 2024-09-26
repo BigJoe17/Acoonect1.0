@@ -27,7 +27,6 @@ const App = () => {
         <Route path="/post" element={<Postpage />} />
         <Route path="/user" element={<Thirdpage />} />
         <Route path="/profiletwo" element={<ProfilePage />} />
-        <Route path="/profiletwo" element={<ProfilePage />} />
         <Route path="/server" element={<Thirdpage />} />
         <Route path="/server" element={<Thirdpage />} />
         <Route path="/signup" element={<Signup />} />

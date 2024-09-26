@@ -10,6 +10,7 @@ import {
   Users,
   MessageSquare,
 } from "lucide-react";
+import { Link } from "react-router-dom";
 import Logo from "./extra/Logo";
 
 interface NavBarProps {
@@ -17,7 +18,7 @@ interface NavBarProps {
 }
 
 interface NavItemProps {
-  href: string;
+  to: string;
   isMobile?: boolean;
   className?: string;
   children: React.ReactNode;
@@ -28,34 +29,34 @@ const NavBar: React.FC<NavBarProps> = ({ isLoggedIn }) => {
   const toggleMenu = () => setIsOpen(!isOpen);
 
   const NavItem: React.FC<NavItemProps> = ({
-    href,
+    to,
     className,
     children,
     isMobile = false,
   }) => (
-    <a
-      href={href}
+    <Link
+      to={to}
       onClick={isMobile ? toggleMenu : undefined}
       className={`text-gray-800  hover:bg-gray-500 last-of-type:hover:bg-gray-800 hover:text-white ${
         isMobile ? "block px-3 py-2 text-base" : "px-3 py-2 text-sm"
       } rounded-md font-medium flex ${className}`}
     >
       {children}
-    </a>
+    </Link>
   );
 
   const menuItems = isLoggedIn
     ? [
-        { href: "/feed", label: "Feed", icon: Home },
-        { href: "/servers", label: "Servers", icon: Users },
-        { href: "/resources", label: "Resources", icon: Book },
-        { href: "/messages", label: "Messages", icon: MessageSquare },
-        { href: "/profile", label: "Profile", icon: User },
-        { href: "/logout", label: "Logout", icon: LogOut },
+        { to: "/feed", label: "Feed", icon: Home },
+        { to: "/servers", label: "Servers", icon: Users },
+        { to: "/resources", label: "Resources", icon: Book },
+        { to: "/messages", label: "Messages", icon: MessageSquare },
+        { to: "/profile", label: "Profile", icon: User },
+        { to: "/logout", label: "Logout", icon: LogOut },
       ]
     : [
-        { href: "/", label: "Home", icon: Home },
-        { href: "/signup", label: "Register", icon: LogIn },
+        { to: "/", label: "Home", icon: Home },
+        { to: "/signup", label: "Register", icon: LogIn },
       ];
 
   return (
@@ -65,8 +66,8 @@ const NavBar: React.FC<NavBarProps> = ({ isLoggedIn }) => {
         <div className="hidden md:flex space-x-4 last:!bg-gray-800">
           {menuItems.map((item) => (
             <NavItem
-              key={item.href}
-              href={item.href}
+              key={item.to}
+              to={item.to}
               className={
                 item.label === "Logout" || item.label === "Register"
                   ? "bg-gray-800 text-white"
@@ -87,8 +88,8 @@ const NavBar: React.FC<NavBarProps> = ({ isLoggedIn }) => {
 
       {isOpen && (
         <div className="md:hidden px-2 pt-2 pb-3 space-y-1">
-          {menuItems.map(({ href, label, icon: Icon }) => (
-            <NavItem key={href} href={href} isMobile>
+          {menuItems.map(({ to, label, icon: Icon }) => (
+            <NavItem key={to} to={to} isMobile>
               <Icon className="inline-block mr-2" size={18} /> {label}
             </NavItem>
           ))}
